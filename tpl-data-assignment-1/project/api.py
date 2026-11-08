@@ -12,6 +12,7 @@ sess = sessionmaker(bind=engine)
 def fetch_users() -> list[User]:
     """Fetches users and stores them to database"""
     response = requests.get("https://jsonplaceholder.typicode.com/users")
+    response.raise_for_status()
     users = response.json()
 
     session = sess()

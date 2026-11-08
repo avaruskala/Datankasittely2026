@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def analyse_users(users: list[User]):
-
+    """Analyse users by printing shape first two and last two"""
     df = pd.DataFrame(
         data=[
             {"id": user.id, "Name": user.name, "Email": user.email, "Phone": user.phone}
